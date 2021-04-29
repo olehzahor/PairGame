@@ -40,7 +40,8 @@ extension PlacesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell") as! PlaceCell
-        
+        let place = placesController.places[indexPath.row]
+        place.viewModel.configure(cell)
         return cell
     }
 }
